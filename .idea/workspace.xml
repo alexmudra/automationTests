@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60d5db63-f0f2-46bf-8b67-f1e2ac6e9823" name="Default" comment="addTempTestClass">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mypackage/testClass.java" afterPath="$PROJECT_DIR$/src/mypackage/testClass.java" />
     </list>
     <ignored path="AutomationTests.iws" />
@@ -28,8 +27,8 @@
       <file leaf-file-name="testClass.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mypackage/testClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.57575756">
-              <caret line="65" column="19" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
+            <state vertical-scroll-proportion="-0.42424244">
+              <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -544,8 +543,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mypackage/testClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57575756">
-          <caret line="65" column="19" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
+        <state vertical-scroll-proportion="-0.42424244">
+          <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
           <folding />
         </state>
       </provider>
