@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60d5db63-f0f2-46bf-8b67-f1e2ac6e9823" name="Default" comment="addTempTestClass">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaQA/mypackage/testClass.class" afterPath="$PROJECT_DIR$/out/production/JavaQA/mypackage/testClass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mypackage/testClass.java" afterPath="$PROJECT_DIR$/src/mypackage/testClass.java" />
     </list>
     <ignored path="AutomationTests.iws" />
@@ -27,11 +29,10 @@
       <file leaf-file-name="testClass.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mypackage/testClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.030303">
-              <caret line="100" column="39" selection-start-line="100" selection-start-column="39" selection-end-line="100" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.969697">
+              <caret line="49" column="84" selection-start-line="49" selection-start-column="84" selection-end-line="49" selection-end-column="84" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1517770867857" expanded="true" signature="347:2405" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -485,7 +486,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -546,11 +547,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mypackage/testClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.030303">
-          <caret line="100" column="39" selection-start-line="100" selection-start-column="39" selection-end-line="100" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.969697">
+          <caret line="49" column="84" selection-start-line="49" selection-start-column="84" selection-end-line="49" selection-end-column="84" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1517770867857" expanded="true" signature="347:2405" placeholder="..." />
           </folding>
         </state>
       </provider>
