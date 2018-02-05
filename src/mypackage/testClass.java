@@ -9,91 +9,51 @@ public class testClass { //название класса должно совпа
 
     public static void main(String[] args) { // этот метод обязателен, является точкой входа в программу
 
-        //SET КОЛЕКЦИЯ
+        //MAP КОЛЕКЦИЯ (отличительная особенность map: хранятся только пары key + value)
+        //key может быть любого типа). Доступ к колекции по уникальному ключу, значения могут повторятся
 
-        //Краткое описание разницы между колекциями Lisa and Set
-        /*
-
-╔═══════════════════╦══════════════════════╦═════════════════════════════╗
-║                   ║         List         ║            Set              ║
-║     Duplicates    ║          YES         ║            NO               ║
-╠═══════════════════╬══════════════════════╬═════════════════════════════╣
-║       Order       ║       ORDERED        ║  DEPENDS ON IMPLEMENTATION  ║
-╠═══════════════════╬══════════════════════╬═════════════════════════════╣
-║ Positional Access ║         YES          ║            NO               ║
-╚═══════════════════╩══════════════════════╩═════════════════════════════╝
-        List
-
-        Является упорядоченной группировкой элементов.
-        Список используется для сбора элементов с дубликатами.
-        Новые методы определены внутри списка интерфейс.
-
-        Set
-
-        Является неупорядоченной группировкой элементов.
-        Set используется для сбора элементов без дубликатов.
-        Внутри интерфейса Set не определены новые методы, поэтому мы должны использовать методы интерфейса Collection только с помощью подклассов Set.
-
-        Упорядоченные списки элементов (уникальные или нет)
-
-            Соответствует интерфейсу Java с именем List
-            Доступ к ним можно получить по индексу
-
-            с использованием
-
-            LinkedList
-            ArrayList
-            Списки уникальных элементов:
-            Соответствует интерфейсу Java с именем Set
-            Невозможно получить не по индексу
-
-            с использованием
-
-            HashSet (неупорядоченный)
-            LinkedHashSet (заказывается)
-            TreeSet (отсортированный по естественному порядку или предоставленным компаратором)
-            Оба интерфейса Set и List соответствуют интерфейсу Java с именем Collection
-        */
-
-        Set<Integer> firstSet = new HashSet<>();//создаем новый Set через самую популярную реализацию(HashSet)
-        firstSet.add(10);// добавили елемент 10 через метод .add
-        firstSet.add(11);
-        firstSet.add(11);//значение 11 не запишется в сет (оно не уникальное)
-        firstSet.add(13);
-        firstSet.add(14);
-        System.out.println(firstSet);//выведет только УНИКАЛЬНЫЕ значения(не уникальные даже не попадут в сет)
-
-        firstSet.size();//.size показывает размер сета
-        System.out.println(firstSet.size());
+        Map<Integer, String> myMap = new HashMap<>();/*Map<Integer, String> - создали Map где индексы будут интежер,
+        а значения стринг*/
+        myMap.put(1, "Black"); //помещаем стринговое значение Black в ключ 1 должен быть уникальным
+        myMap.put(2, "White");
+        myMap.put(3, "Yellow");
+        System.out.println("Values in my" + myMap);
+        System.out.println(myMap.get(1));// .get используется для вывода значения под ключом 1
         System.out.println("------------------------------------------------------------------");
 
-        //Попробуем работать c Set через итератор(интерфейс). Плюс, используем циклы
+        System.out.println(myMap.size());//выведет к-во пар в мапе
+        //myMap.clear(); //очищает значения в мапе
+        //System.out.println(myMap.size());//вывод будет 0, потому что мы выше очистили мапу
+        System.out.println("------------------------------------------------------------------");
 
-        Iterator<Integer> iteratorSet = firstSet.iterator();
-        while (iteratorSet.hasNext()) {
-            System.out.println(iteratorSet.next());// выведет на екран все уникальные значения сета (10,11,13,14)
+        System.out.println(myMap.containsKey(1));//.containsKey позволяет узнать если в мапе определенный ключ (булеан)
+        System.out.println("------------------------------------------------------------------");
+
+        System.out.println(myMap.containsValue("Black"));//.containsValue проверяет есть ли такое значение в мапе (булеан)
+        System.out.println("------------------------------------------------------------------");
+
+        //Пример кода с использованием итератора и цикла, чтобы узнать значения всех ключей
+        Set<Integer> keys = myMap.keySet();//.keySet возвращает все ключи которые есть в мапе
+        Iterator<Integer> myIterator = keys.iterator();
+        while (myIterator.hasNext()){
+            System.out.println(myMap.get(myIterator.next()));
+            System.out.println("------------------------------------------------------------------");
         }
+
+        //поменять значение в ключе через метод .put
+        myMap.put(1,"Orange");
+        System.out.println(myMap.get(1));// значение в ключе 2 было блек, а теперь оранж
         System.out.println("------------------------------------------------------------------");
 
-        for (int i : firstSet){
-            System.out.println(i);//выведет на екран все уникальные значения сета (10,11,13,14)
-        }
-        firstSet.remove(14);//с помощью метода .remove удаляем значение, указываем не индекс(как в list),а само
-        //значение которое нужно удалить
-        System.out.println(firstSet);//вывод 10,11,13 (14 был удален)
-        System.out.println("------------------------------------------------------------------");
+        //Создадим map со типом ключа стринг и значением типа стринг
 
-        /*firstSet.clear();// .clear удаляет все значения с сета
-        System.out.println(firstSet);
-        System.out.println(firstSet.size());
-        System.out.println("------------------------------------------------------------------");*/
+        Map<String,String> mySecondMap = new HashMap();
+        mySecondMap.put("Alex", "Alexandrovich");
+        mySecondMap.put("Ziaida","Koshlina");
+        mySecondMap.put("Arhimed","Sokratovich");
+        System.out.println(mySecondMap.get("Alex"));//вывод будет Alexandrovich
+        System.out.println(mySecondMap.get("Arhimed"));//вывод будет Sokratovich
 
-        System.out.println(firstSet.contains(10));// true - потому что значение 10 есть в сете
-        System.out.println(firstSet.contains(14));// false - потому что значение 14 есть в сете
-
-        //Примечание! метод .get отсутствует в Set потому, что в Set нет индексов(только уникальные значения)
-
-        System.out.println("------------------------------------------------------------------");
     }
 
 
