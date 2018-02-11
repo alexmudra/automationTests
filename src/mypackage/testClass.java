@@ -40,7 +40,6 @@ public class testClass { //название класса должно совпа
         boolean result = showBooleanValue(20, 50, 30);// создали и вызвали булеан метод
         System.out.println(result);
         devideCodeLine();
-
     }
 
     //напишем метод(блок кода), который возвращает сумму чисел. static мы обозначили статический метод. такой же как и
