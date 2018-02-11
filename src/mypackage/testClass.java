@@ -9,53 +9,84 @@ public class testClass { //название класса должно совпа
 
     public static void main(String[] args) { // этот метод обязателен, является точкой входа в программу
 
-        //MAP КОЛЕКЦИЯ (отличительная особенность map: хранятся только пары key + value)
-        //key может быть любого типа). Доступ к колекции по уникальному ключу, значения могут повторятся
+        // ИЗУЧАЕМ МЕТОДЫ В JAVA
 
-        Map<Integer, String> myMap = new HashMap<>();/*Map<Integer, String> - создали Map где индексы будут интежер,
-        а значения стринг*/
-        myMap.put(1, "Black"); //помещаем стринговое значение Black в ключ 1 должен быть уникальным
-        myMap.put(2, "White");
-        myMap.put(3, "Yellow");
-        System.out.println("Values in my" + myMap);
-        System.out.println(myMap.get(1));// .get используется для вывода значения под ключом 1
-        System.out.println("------------------------------------------------------------------");
 
-        System.out.println(myMap.size());//выведет к-во пар в мапе
-        //myMap.clear(); //очищает значения в мапе
-        //System.out.println(myMap.size());//вывод будет 0, потому что мы выше очистили мапу
-        System.out.println("------------------------------------------------------------------");
+        int a = 13;
+        int b = 2222;
+        int summ2; //создали переменную
 
-        System.out.println(myMap.containsKey(1));//.containsKey позволяет узнать если в мапе определенный ключ (булеан)
-        System.out.println("------------------------------------------------------------------");
+        summ2 = getSum(a,b); //переменной summ2 мы вызвали метод getSum и передали значения
+        System.out.println(summ2); // вывели результат на екран
+        System.out.println("---------------------------------------------------------------");
+        System.out.println(getSum(2,2)); //вторая вариация синтаксиса и использования метода getSum
+        System.out.println("---------------------------------------------------------------");
+        showSum(10,20,40);//вызвали метод showSum с различными значениями
+        System.out.println("---------------------------------------------------------------");
 
-        System.out.println(myMap.containsValue("Black"));//.containsValue проверяет есть ли такое значение в мапе (булеан)
-        System.out.println("------------------------------------------------------------------");
+        saySmthWithoutValues();
+        devideCodeLine();
 
-        //Пример кода с использованием итератора и цикла, чтобы узнать значения всех ключей
-        Set<Integer> keys = myMap.keySet();//.keySet возвращает все ключи которые есть в мапе
-        Iterator<Integer> myIterator = keys.iterator();
-        while (myIterator.hasNext()){
-            System.out.println(myMap.get(myIterator.next()));
-            System.out.println("------------------------------------------------------------------");
-        }
+        sayString("Alex");//вызвали метод который принимает стринг
+        devideCodeLine();
 
-        //поменять значение в ключе через метод .put
-        myMap.put(1,"Orange");
-        System.out.println(myMap.get(1));// значение в ключе 2 было блек, а теперь оранж
-        System.out.println("------------------------------------------------------------------");
+        String name = "Vera";//переопределили присвоили переменной name значение Vera
+        sayString(name); //запустили метод с новым значением Вера
+        devideCodeLine();
 
-        //Создадим map со типом ключа стринг и значением типа стринг
+        showPreviousMethods("Elena", 12, 16, 25);//вызываем и передаем в метод showPreviousMethods стринг и 3 значения
+        devideCodeLine();
 
-        Map<String,String> mySecondMap = new HashMap();
-        mySecondMap.put("Alex", "Alexandrovich");
-        mySecondMap.put("Ziaida","Koshlina");
-        mySecondMap.put("Arhimed","Sokratovich");
-        System.out.println(mySecondMap.get("Alex"));//вывод будет Alexandrovich
-        System.out.println(mySecondMap.get("Arhimed"));//вывод будет Sokratovich
+        boolean result = showBooleanValue(20, 50, 30);// создали и вызвали булеан метод
+        System.out.println(result);
+        devideCodeLine();
 
     }
 
+    //напишем метод(блок кода), который возвращает сумму чисел. static мы обозначили статический метод. такой же как и
+    //родительский
+    static int getSum(int x, int y){
+        // в фигур. скобках(тело метода) пишем последовательность действий которое должны выполняться
+
+        int sum;
+        sum = x + y;
+        return sum; //ретурн возвращает какое-то значение в методе
+
+    }
+
+    // создадим метод showSum(с void)который не возвращает значения определенного типа.
+    static void showSum(int x, int y, int z){
+        int summ3 = x+y+z;
+        System.out.println("Summ3 is " + summ3);
+    }
+    // Намишем метод который не принимает какие-то значения, он просто выполнит какието действия
+    static void saySmthWithoutValues(){
+        System.out.println("Empty string");
+        System.out.println("Hello");
+        System.out.println("I'm styding. Do you see it?");
+    }
+    static void devideCodeLine(){
+        System.out.println("--------------------------------------------------------------------");
+    }
+    // создадим метод sayString который принимает стринговое значение
+    static void sayString(String name){
+        System.out.println("Hi, "+ name + "!");
+        System.out.println("Are you ready to learn Java?");
+    }
+    //Создадим новый метод который выводит методы которые мы уже создали
+    static void showPreviousMethods(String name, int a, int b, int z){
+        System.out.println("Start of program");
+        sayString(name);
+        showSum(a, b, z);
+        System.out.println("End of program");
+    }
+    //Создадим метод с типом булеан
+    static boolean showBooleanValue(int x, int y, int z){
+        int sum = x + y+ z;
+        System.out.println("The sum is " + sum);
+        return true;
+
+    }
 
 
 
