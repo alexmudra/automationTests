@@ -9,85 +9,72 @@ public class testClass { //название класса должно совпа
 
     public static void main(String[] args) { // этот метод обязателен, является точкой входа в программу
 
-        // ИЗУЧАЕМ МЕТОДЫ В JAVA
+        // ПЕРЕГРУЗКА МЕТОДОВ В JAVA - ПИСАТЬ МЕТОД НЕСКОЛЬКО РАЗ С ОДНИМ ИМЕНЕМ В ЗАВИСИМОСТИ ОТ ПАРАМЕТРОВ КОТОРЫЕ
+        // ОН ПРИНИМАЕТ. МЫ МОЖЕМ НАПИСАТЬ НЕСКОЛЬКО МЕТОДОВ, НО ПЕРЕДАВАТЬ В НЕГО РАЗЛИЧНЫЕ ПАРАМЕТРЫ
 
 
-        int a = 13;
-        int b = 2222;
-        int summ2; //создали переменную
-
-        summ2 = getSum(a,b); //переменной summ2 мы вызвали метод getSum и передали значения
-        System.out.println(summ2); // вывели результат на екран
-        System.out.println("---------------------------------------------------------------");
-        System.out.println(getSum(2,2)); //вторая вариация синтаксиса и использования метода getSum
-        System.out.println("---------------------------------------------------------------");
-        showSum(10,20,40);//вызвали метод showSum с различными значениями
-        System.out.println("---------------------------------------------------------------");
-
-        saySmthWithoutValues();
-        devideCodeLine();
-
-        sayString("Alex");//вызвали метод который принимает стринг
-        devideCodeLine();
-
-        String name = "Vera";//переопределили присвоили переменной name значение Vera
-        sayString(name); //запустили метод с новым значением Вера
-        devideCodeLine();
-
-        showPreviousMethods("Elena", 12, 16, 25);//вызываем и передаем в метод showPreviousMethods стринг и 3 значения
-        devideCodeLine();
-
-        boolean result = showBooleanValue(20, 50, 30);// создали и вызвали булеан метод
+        int result; // вызвали метод getSum который обрабатывает 2 параметра
+        result = getSum(1,2);
         System.out.println(result);
-        devideCodeLine();
+        codeDeviderLine();
+
+        result = getSum(10,20,30);// вызвали ПЕРЕГРУЖЕНЫЙ метод getSum который обрабатывает 3 параметра
+        System.out.println(result);
+        codeDeviderLine();
+
+        sayHello("Alex");//мы вызвали метод и передали туда 1 стринговое значение
+        codeDeviderLine();
+
+        sayHello("Vera", "Alena");//мы вызвали ПЕРЕГРУЖЕНЫЙ метод sayHello и передали туда 2 стринговых значения
+        codeDeviderLine();
+
+        int [] array = {1,23,233,35,67};//создаем масив значения которого будет принимать метод getSum
+
+        getSum(array, "Alex");//вызвали перегруженый метод со значениями из масива и стринговым значением
+        codeDeviderLine();
+
     }
+/* Примеры различных перегруженых методов */
 
-    //напишем метод(блок кода), который возвращает сумму чисел. static мы обозначили статический метод. такой же как и
-    //родительский
-    static int getSum(int x, int y){
+    static int getSum(int x, int y){//метод принимает 2 параметра
         // в фигур. скобках(тело метода) пишем последовательность действий которое должны выполняться
-
         int sum;
         sum = x + y;
-        return sum; //ретурн возвращает какое-то значение в методе
+        return sum; //return возвращает какое-то значение в методе
+
+    }
+    static int getSum(int x, int y, int z) {//метод принимает 3 параметра - мы ПЕРЕГРУЗИЛИ МЕТОД getsum
+        // в фигур. скобках(тело метода) пишем последовательность действий которое должны выполняться
+        int sum;
+        sum = x + y + z;
+        return sum;
+    }
+    static int getSum(int[]array, String name) {//перегрузим етот метод где он будет принимать масив чисел и плюс какое-то имя
+        int sum = 0;
+        for (int i = 0; i < array.length; i++){
+            sum += array[i];
+        }
+        System.out.println("Hi," + name);
+        System.out.println("Your sum is " + sum);
+        return sum;
+
+
+    }
+    static void sayHello(String name1) {//этот метод sayHello обрабатывает 1 стринговое значение
+        System.out.println("Hi, " + name1 + "!");
+        System.out.println("Are you ready to learn Java?");
 
     }
 
-    // создадим метод showSum(с void)который не возвращает значения определенного типа.
-    static void showSum(int x, int y, int z){
-        int summ3 = x+y+z;
-        System.out.println("Summ3 is " + summ3);
-    }
-    // Намишем метод который не принимает какие-то значения, он просто выполнит какието действия
-    static void saySmthWithoutValues(){
-        System.out.println("Empty string");
-        System.out.println("Hello");
-        System.out.println("I'm styding. Do you see it?");
-    }
-    static void devideCodeLine(){
-        System.out.println("--------------------------------------------------------------------");
-    }
     // создадим метод sayString который принимает стринговое значение
-    static void sayString(String name){
-        System.out.println("Hi, "+ name + "!");
+    static void sayHello(String name1, String name2){//этот метод sayHello обрабатывает 2 стринговых значения
+        System.out.println("Hi, "+ name1 + "!");
+        System.out.println("Hi, "+ name2 + "!");
         System.out.println("Are you ready to learn Java?");
     }
-    //Создадим новый метод который выводит методы которые мы уже создали
-    static void showPreviousMethods(String name, int a, int b, int z){
-        System.out.println("Start of program");
-        sayString(name);
-        showSum(a, b, z);
-        System.out.println("End of program");
+    static void codeDeviderLine(){
+        System.out.println("---------------------------------"+"End Code"+"-----------------------------------");
     }
-    //Создадим метод с типом булеан
-    static boolean showBooleanValue(int x, int y, int z){
-        int sum = x + y+ z;
-        System.out.println("The sum is " + sum);
-        return true;
-
-    }
-
-
 
 }
 
