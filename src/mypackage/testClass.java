@@ -9,71 +9,48 @@ public class testClass { //название класса должно совпа
 
     public static void main(String[] args) { // этот метод обязателен, является точкой входа в программу
 
-        // ПЕРЕГРУЗКА МЕТОДОВ В JAVA - ПИСАТЬ МЕТОД НЕСКОЛЬКО РАЗ С ОДНИМ ИМЕНЕМ В ЗАВИСИМОСТИ ОТ ПАРАМЕТРОВ КОТОРЫЕ
-        // ОН ПРИНИМАЕТ. МЫ МОЖЕМ НАПИСАТЬ НЕСКОЛЬКО МЕТОДОВ, НО ПЕРЕДАВАТЬ В НЕГО РАЗЛИЧНЫЕ ПАРАМЕТРЫ
+        // ИСКЛЮЧЕНИЯ В JAVA. Используются когда в коде выскакивает какой то ексепшн
 
 
-        int result; // вызвали метод getSum который обрабатывает 2 параметра
-        result = getSum(1,2);
-        System.out.println(result);
+        devide(10, 5);
+        codeDeviderLine();//The result is 2
+        //Finish
+
+        devide2(20,0); // вернет ексепшн "Error. You can't devide by zero"
         codeDeviderLine();
 
-        result = getSum(10,20,30);// вызвали ПЕРЕГРУЖЕНЫЙ метод getSum который обрабатывает 3 параметра
-        System.out.println(result);
-        codeDeviderLine();
 
-        sayHello("Alex");//мы вызвали метод и передали туда 1 стринговое значение
-        codeDeviderLine();
-
-        sayHello("Vera", "Alena");//мы вызвали ПЕРЕГРУЖЕНЫЙ метод sayHello и передали туда 2 стринговых значения
-        codeDeviderLine();
-
-        int [] array = {1,23,233,35,67};//создаем масив значения которого будет принимать метод getSum
-
-        getSum(array, "Alex");//вызвали перегруженый метод со значениями из масива и стринговым значением
-        codeDeviderLine();
-
+        // Примеры методов
     }
-/* Примеры различных перегруженых методов */
+        //используем команду try catch
 
-    static int getSum(int x, int y){//метод принимает 2 параметра
-        // в фигур. скобках(тело метода) пишем последовательность действий которое должны выполняться
-        int sum;
-        sum = x + y;
-        return sum; //return возвращает какое-то значение в методе
+    public static void devide(int a, int b) {
+        try { // эта команда выполняет блок кода в фигур.скобках
+            System.out.println("The result is " + a / b);//это пример кода
+        } catch (ArithmeticException e ){// catch + в скобках клас (н-р: ArithmeticExeption -> ловит арифметические ошибки)
+            // указываем ошибку которую мы планируем ловить. Можем вставлять любое к-во блоков try catch finally
 
-    }
-    static int getSum(int x, int y, int z) {//метод принимает 3 параметра - мы ПЕРЕГРУЗИЛИ МЕТОД getsum
-        // в фигур. скобках(тело метода) пишем последовательность действий которое должны выполняться
-        int sum;
-        sum = x + y + z;
-        return sum;
-    }
-    static int getSum(int[]array, String name) {//перегрузим етот метод где он будет принимать масив чисел и плюс какое-то имя
-        int sum = 0;
-        for (int i = 0; i < array.length; i++){
-            sum += array[i];
+            System.out.println("Issue");//тут описываем действия если мы поймаем ошибку (например деление на 0
+        } finally { // finally указывает, что блок кода будет выполнятся в случае без ошибок и с ошибкой, без разницы
+            //finally можна не писать, все по желанию
+            System.out.println("Finish");
+
         }
-        System.out.println("Hi," + name);
-        System.out.println("Your sum is " + sum);
-        return sum;
-
-
     }
-    static void sayHello(String name1) {//этот метод sayHello обрабатывает 1 стринговое значение
-        System.out.println("Hi, " + name1 + "!");
-        System.out.println("Are you ready to learn Java?");
-
+    // Используем команду throw
+    public static void devide2(int z, int d){
+        if (d == 0){
+            throw new ArithmeticException("Error. You can't devide by zero");
+        } else {
+            System.out.println("Resuls is " + z / d);
+        }
     }
 
-    // создадим метод sayString который принимает стринговое значение
-    static void sayHello(String name1, String name2){//этот метод sayHello обрабатывает 2 стринговых значения
-        System.out.println("Hi, "+ name1 + "!");
-        System.out.println("Hi, "+ name2 + "!");
-        System.out.println("Are you ready to learn Java?");
-    }
+    // Новая команда!!!
+    // Блок кода throws в описании метода указывает на тот ексепшн который он может выбросить
+
     static void codeDeviderLine(){
-        System.out.println("---------------------------------"+"End Code"+"-----------------------------------");
+        System.out.println("---------------------------------"+" End Code "+"-----------------------------------");
     }
 
 }
