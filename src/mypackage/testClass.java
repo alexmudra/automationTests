@@ -9,48 +9,26 @@ public class testClass { //название класса должно совпа
 
     public static void main(String[] args) { // этот метод обязателен, является точкой входа в программу
 
-        // ИСКЛЮЧЕНИЯ В JAVA. Используются когда в коде выскакивает какой то ексепшн
+        // ИЗУЧАЕМ КЛАССЫ НА ПРИМЕРЕ НОВОГО КЛАССА Car (в классе TestClass будем создавать екземпляр метода
+
+        Car car1 = new Car();// мы создали обект(car2) класса Car
+
+        // зададим обекту car1 значения
+        car1.color = "Black";
+        car1.length = 5000;
+        car1.height = 2000;
+        car1.width = 2500;
+
+        //вызываем метод с родительского класа car и зададим значение 50
+
+        car1.addWeight(50);//результат метода будет: New weight: 2050
+
+        car1.drive(120);// результатом метода drive: The speed is Ok. We're ready to drive
 
 
-        devide(10, 5);
-        codeDeviderLine();//The result is 2
-        //Finish
 
-        devide2(20,0); // вернет ексепшн "Error. You can't devide by zero"
-        codeDeviderLine();
-
-
-        // Примеры методов
-    }
-        //используем команду try catch
-
-    public static void devide(int a, int b) {
-        try { // эта команда выполняет блок кода в фигур.скобках
-            System.out.println("The result is " + a / b);//это пример кода
-        } catch (ArithmeticException e ){// catch + в скобках клас (н-р: ArithmeticExeption -> ловит арифметические ошибки)
-            // указываем ошибку которую мы планируем ловить. Можем вставлять любое к-во блоков try catch finally
-
-            System.out.println("Issue");//тут описываем действия если мы поймаем ошибку (например деление на 0
-        } finally { // finally указывает, что блок кода будет выполнятся в случае без ошибок и с ошибкой, без разницы
-            //finally можна не писать, все по желанию
-            System.out.println("Finish");
-
-        }
-    }
-    // Используем команду throw
-    public static void devide2(int z, int d){
-        if (d == 0){
-            throw new ArithmeticException("Error. You can't devide by zero");
-        } else {
-            System.out.println("Resuls is " + z / d);
-        }
-    }
-
-    // Новая команда!!!
-    // Блок кода throws в описании метода указывает на тот ексепшн который он может выбросить
-
-    static void codeDeviderLine(){
-        System.out.println("---------------------------------"+" End Code "+"-----------------------------------");
+   // static void codeDeviderLine(){
+     //   System.out.println("---------------------------------"+" End Code "+"-----------------------------------");
     }
 
 }
