@@ -1,13 +1,12 @@
 package mypackage;
 
-import java.util.*;
+import javax.sound.midi.Soundbank;
 
 /**
- * Created by Alex on 2/2/2018.
+ * Created by Alex on 2/17/2018.
  */
-public class testClass {
 
-    //НАСЛЕДОВАНИЕ В JAVA. Важно, что родительский класс может быть только один, а наследников может быть множество
+//НАСЛЕДОВАНИЕ В JAVA
     /*
     При использовании наследования вы говорите: Этот новый класс похож на тот старый класс.
     В коде это пишется как extends, после которого указываете имя базового класса.
@@ -22,43 +21,27 @@ public class testClass {
 
         public class MainActivity extends Activity {
 
-        } */
+}
+Доступ к переменным  с модификатором доступа privatе возможен через создание геттеров и сетером (alt +insert)
+*/
 
-        public static void main(String[] args) {
+public class Animal { // создадим новый родительский сласс
+    String name; //объявим общие переменные для класса
+    String color;
 
-            // создадим объект каждого класса (Dog, Cat)
-
-            Cat catBayun = new Cat();
-            Dog dogRoki = new Dog();
-
-            catBayun.name = "Bayun"; // дали имя нашему коту
-            dogRoki.name = "Roki"; // дали имя нашей собеке
-
-            catBayun.color = "White"; //обозначили коту цвет
-            dogRoki.color = "Black"; // обозначили собаке цвет
-
-            catBayun.walk("Park");
-            dogRoki.walk("Backyard");
-
-            catBayun.feed("Milk");// метод feed есть только в класе Cat, указали чем мы будем кормить кота
-            dogRoki.sit_down(); // тут мы просто указываем метод sit_down который уже определен в класе Dog
-
-            System.out.println("The cat's name is "+ catBayun.name); //вывод будет The cat's name is Bayun
-            System.out.println("The dog's name is "+ dogRoki.name); //The dog's name is Roki
+    public int var;// создадим переменную для експерементов из Инкапсуляцией
 
 
-            System.out.println(dogRoki.getWeight());//мы обратились через геттер к методу weight из класса Dog
-            //чтобы получить вес dogRoki
-        }
-
-
-
-
-
+    public void walk(String place){ //создадим метод walk который будет общим для всех классов родительского класса
+        // в (String place) мы передадим место где будем представители класса Animal будут гулять
+        System.out.println("We're walking in "+ place); // выведем место где планируем гулять
+    }
+    public  void sleep (){ // создадим общий метод sleep.Этот метод будет общим для всех представителей и наследников
+        // класса Animal
+        System.out.println("I'm sleeping");
+    }
 
     static void codeDeviderLine(){
         System.out.println("---------------------------------" + " End Code " + "-----------------------------------");
     }
 }
-
-
