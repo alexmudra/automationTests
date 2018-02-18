@@ -49,7 +49,15 @@ public class testClass {
 
             System.out.println(dogRoki.getWeight());//мы обратились через геттер к методу weight из класса Dog
             //чтобы получить вес dogRoki
+
+            // На примере с sounds мы видем ПОЛИМОРФИЗМ
+
+            dogRoki.sounds(); // для собаки вывод будет Brrrrr-Gau-Gau
+            catBayun.sounds();// для кота вывод будет Myau-Myau-Myau
+
+
         }
+
 
 
 

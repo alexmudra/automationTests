@@ -25,5 +25,11 @@ public class Cat extends Animal { //создали клас Кет которы�
     public void feed (String feed){// создали метод кормить
         System.out.println("I like that food");
     }
+    // Создадим переопределенный метод sounds(из родительского класса Animal для класса Cat
+
+    @Override //переопределяем метод через аннотацио оверрайд
+    public void sounds(){
+        System.out.println("Myau-Myau-Myau");
+    }
 }
 
